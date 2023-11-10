@@ -14,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('depan');
+    return view('depan'); //mengarahkan ke views/depan.blade.php
 });
