@@ -1,7 +1,7 @@
 <?php
 
-use App\Models\section;
-use App\Models\setting;
+use App\Models\Section;
+use App\Models\Setting;
 
 function get_setting_value($key)
 {
