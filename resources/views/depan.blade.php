@@ -1,6 +1,8 @@
 @php
     $site_name = get_setting_value('_site_name');
-    $jumbotron = get_section_data('JUMBOTRON');
+    $location = get_setting_value('_location');
+    $description = get_setting_value('_site_description');
+    $jumbotron = get_section_data('JUMBROTRON');
 @endphp
 
 <!DOCTYPE html>
@@ -61,7 +63,7 @@
                 <div class="divider-custom-line"></div>
             </div>
             <!-- Masthead Subheading-->
-            <p class="masthead-subheading font-weight-light mb-0">{{ $jumbotron->content }}</p>
+            <p class="masthead-subheading font-weight-light mb-0">{!! strip_tags($jumbotron->content) !!}</p>
         </div>
     </header>
     <!-- Partner Section-->
@@ -124,9 +126,7 @@
                 <div class="col-lg-4 mb-5 mb-lg-0">
                     <h4 class="text-uppercase mb-4">Location</h4>
                     <p class="lead mb-0">
-                        2215 John Daniel Drive
-                        <br />
-                        Clark, MO 65243
+                        {{ $location }}
                     </p>
                 </div>
                 <!-- Footer Social Icons-->
@@ -143,11 +143,10 @@
                 </div>
                 <!-- Footer About Text-->
                 <div class="col-lg-4">
-                    <h4 class="text-uppercase mb-4">About Freelancer</h4>
+                    <h4 class="text-uppercase mb-4">About Site</h4>
                     <p class="lead mb-0">
-                        Freelance is a free to use, MIT licensed Bootstrap theme created by
-                        <a href="http://startbootstrap.com">Start Bootstrap</a>
-                        .
+                        {!! strip_tags($description) !!}
+
                     </p>
                 </div>
             </div>
